@@ -6,6 +6,18 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('home', function() {
+    this.route('kotu');
+  });
+  this.route('orgs');
+  this.route('org',{path: 'org/:id'}, function() { //org/yahoo
+    this.route('repos');
+    this.route('repo', {path: ':repoid'}, function() {
+      this.route('contributors');
+      this.route('issues');
+    }); //org/jquery/jquery-ui
+  });
+  this.route('notfound', {path:'*path'});
 });
 
 export default Router;
