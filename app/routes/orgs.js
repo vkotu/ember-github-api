@@ -2,15 +2,18 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model() {
-    return [
-      {id: 'facebook'},
-      {id: 'emberjs'},
-      {id: 'yahoo'},
-      {id: 'netflix'},
-      {id: 'microsoft'},
-      {id: 'ember-cli'}
-    ];
-
+    return new Ember.RSVP.Promise((resolve,reject) => {
+      Ember.run.later(() => {
+        resolve([
+          {id: 'facebook'},
+          {id: 'emberjs'},
+          {id: 'yahoo'},
+          {id: 'netflix'},
+          {id: 'microsoft'},
+          {id: 'ember-cli'}
+        ]);
+      },1000);
+    });
   },
 
   favorites: Ember.inject.service(),

@@ -13,14 +13,17 @@ Router.map(function() {
   this.route('orgs');
 
   //INDIVIDUAL ORG
-  this.route('org',{path: 'org/:id'}, function() { //org/yahoo
+  this.route('org',{path: 'org/:id'}, function() {
+    //org/yahoo
 
     //LIST OF REPOS
     this.route('repos');
+    //org/jquery/jquery-ui
     this.route('repo', {path: ':repoid'}, function() {
       this.route('contributors');
       this.route('issues');
-    }); //org/jquery/jquery-ui
+    });
+    this.route('notfound');
   });
   this.route('notfound', {path:'*path'});
 });
