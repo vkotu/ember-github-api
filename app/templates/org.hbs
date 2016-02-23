@@ -1,3 +1,15 @@
 {{link-to 'Back to list of orgs' 'orgs'}}
 <h4>FaceBook</h4>
+
+
+
 {{outlet}}
+
+<span {{action 'addToRecords' 'Two'}}> Click Meee!!</span>
+<ul>
+  {{#each records as |record|}}
+      <li>{{record.id}}</li>
+  {{/each}}
+
+</ul>
+

@@ -9,8 +9,13 @@ Router.map(function() {
   this.route('home', function() {
     this.route('kotu');
   });
+  //LIST OF ORGS
   this.route('orgs');
+
+  //INDIVIDUAL ORG
   this.route('org',{path: 'org/:id'}, function() { //org/yahoo
+
+    //LIST OF REPOS
     this.route('repos');
     this.route('repo', {path: ':repoid'}, function() {
       this.route('contributors');
