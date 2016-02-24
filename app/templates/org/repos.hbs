@@ -1,10 +1,12 @@
 
 <ul>
+{{#each content as |r|}}
+  {{#github-repo
+  repo=r}}
+  <b>{{r.name}}</b>
+{{/github-repo}}
+{{/each}}
 
-    {{#each content as |repo|}}
-
-    <li>{{link-to repo.name 'org.repo.issues' repo.name}}</li>
-      {{/each}}
   </ul>
 
 {{outlet}}

@@ -1,11 +1,12 @@
 <h2>My Favourite Orgs</h2>
 
 <ul>
-    {{#each content as |org|}}
+{{#each content as |o|}}
+  {{github-org
+  org=o
+  on-fav-clicked="favClicked"}}
+  {{/each}}
 
-    <li><span {{action 'favClicked' org.id}}>[ Add To Favorite ]</span>{{link-to org.id 'org' org.id}}</li>
-
-      {{/each}}
 </ul>
 
 

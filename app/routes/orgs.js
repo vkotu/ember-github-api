@@ -24,7 +24,7 @@ export default Ember.Route.extend({
 
   actions: {
     favClicked(org) {
-      this.get('favorites').favoriteItem(org);
+      this.get('favorites').favoriteItem(org.id);
     },
     linksToggled() {
       console.log("Toggled");
