@@ -11,7 +11,7 @@ export default Ember.Route.extend({
       return new Ember.RSVP.Promise((resolve, reject) => {
         Ember.run.later(() => {
           resolve( rawOrg);
-        },2000);
+        },500);
       });
     })
   },

@@ -12,7 +12,7 @@ export default Ember.Route.extend({
           {id: 'microsoft'},
           {id: 'ember-cli'}
         ]);
-      },1000);
+      },500);
     });
   },
 
@@ -25,6 +25,9 @@ export default Ember.Route.extend({
   actions: {
     favClicked(org) {
       this.get('favorites').favoriteItem(org);
+    },
+    linksToggled() {
+      console.log("Toggled");
     }
   }
 });

@@ -1,0 +1,20 @@
+<h3>{{name}}</h3>
+{{#unless isExpanded}}
+<span {{action 'toggleLinkSection'}}> [ Expand ] </span>
+  {{/unless}}
+
+{{#if isExpanded}}
+<ul>
+    <li>
+       GitHub: <a href="http://github.com/{{github}}" target="_blank">@{{github}}</a>
+    </li>
+    <li>
+        Twitter: <a href="http://twitter.com/{{twitter}}" target="_blank">@{{twitter}}</a>
+    </li>
+    <li>
+        LinkedIn: <a href="https://www.linkedin.com/in/{{linkedin}}" target="_blank">@{{linkedin}}</a>
+    </li>
+</ul>
+<span {{action 'toggleLinkSection'}}> [ Collapse ]</span>
+{{/if}}
+{{yield}}
