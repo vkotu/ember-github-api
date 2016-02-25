@@ -24,7 +24,12 @@ export default Ember.Route.extend({
 
   actions: {
     favClicked(org) {
-      this.get('favorites').favoriteItem(org.id);
+      if(this.get('favorites.items').indexOf(org) < 0 ){
+        this.get('favorites').favoriteItem(org);
+      }else{
+        this.get('favorites').unfavoriteItem(org);
+      }
+
     },
     linksToggled() {
       console.log("Toggled");

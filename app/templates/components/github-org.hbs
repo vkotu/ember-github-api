@@ -1,4 +1,7 @@
 
-<span {{action 'favWasClicked'}}>[ Add To Favorite ] </span>{{link-to org.id 'org' org.id}}
+<span {{action 'favWasClicked'}}>
+[
+  {{unless isFavorited 'Favorite' 'Unfavorite'}}
+    ] </span>{{link-to org.id 'org' org.id}}
 
 {{yield}}

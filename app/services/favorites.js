@@ -5,6 +5,12 @@ export default Ember.Service.extend({
 
   favoriteItem(item) {
     this.get('items').addObject(item);
-    console.log(this.get('items').join(', '));
+    console.log(this.get('items')
+      .map(x => x.id)
+      .join(', ')
+    );
+  },
+  unfavoriteItem(item) {
+    this.get('items').removeObject(item);
   }
 });
