@@ -2,6 +2,8 @@
 <span {{action 'favWasClicked'}}>
 [
   {{unless isFavorited 'Favorite' 'Unfavorite'}}
-    ] </span>{{link-to org.id 'org' org.id}}
+    ]
+</span>
+<span class="guthub-org">{{link-to org.id 'org' org.id}}</span>
+<!--<p>{{testVarChanged}}</p>-->
 
-{{yield}}
