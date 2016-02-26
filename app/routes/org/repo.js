@@ -12,6 +12,6 @@ export default Ember.Route.extend({
     //  rawRepo.oldId = rawRepo.id;
     //  rawRepo.id = rawRepo.name;
     //  return rawRepo;
-    //})
+    //}) 
   }
 });
