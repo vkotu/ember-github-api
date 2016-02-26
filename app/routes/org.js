@@ -5,7 +5,9 @@ export default Ember.Route.extend({
   authentication: Ember.inject.service(),
   model(params){
    // debugger;
-   return $.get(`https://api.github.com/orgs/${params.id}`).then(rawOrg => {
+    let url = `https://api.github.com/orgs/${params.id}?access_token=8b491d8e3f834e900e466be511c84fc869691fa1`;
+    //debugger;
+   return $.get(url).then(rawOrg => {
       rawOrg.oldId = rawOrg.id;
       rawOrg.id = rawOrg.login;
       return new Ember.RSVP.Promise((resolve, reject) => {
